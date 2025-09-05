@@ -3,34 +3,41 @@ public class Libro {
     private String autor;
     private int precio;
 
+    // Constructor
+    public Libro(String titulo, String autor, int precio) {
+        this.titulo = titulo;
+        this.autor = autor;
+        this.precio = precio;
+    }
 
-public Libro (String titulo, String autor, int precio){
-    this.titulo = titulo;
-    this.autor = autor;
-    this.precio = precio;
+    // Getters
+    public String getTitulo() {
+        return titulo;
+    }
 
-}
-public int  getPrecio(){
-return precio;
+    public String getAutor() {
+        return autor;
+    }
 
-}
- public void setprecio (int precio) {
-    this.precio = precio;
+    public int getPrecio() {
+        return precio;
+    }
 
- }
+    // Setters
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
+    }
 
- public String getTitulo() {
-    return titulo;
+    public void setAutor(String autor) {
+        this.autor = autor;
+    }
 
- }
+    public void setPrecio(int precio) {
+        this.precio = precio;
+    }
 
- public String toString (){
-    return "Libro { Titulo : "  + titulo +
-     "Autor : " + autor +
-     "Precio : " + precio +
-
-    "}";
- }
- 
-    
+    // Método toString para imprimir el libro bonito
+    public String toString() {
+        return "Título: " + titulo + ", Autor: " + autor + ", Precio: " + precio;
+    }
 }
