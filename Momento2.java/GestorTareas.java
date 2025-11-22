@@ -78,4 +78,19 @@ public String consultarEstadoTarea(String idTarea){
 
         return "ID no encontrado.";
     }
+    public String modificarTarea(String tareaId, Tarea tarea) {
+         if (tarea.getPrioridad()==3 ){
+        pilaPrioritaria.push(tarea);// Alta prioridad → Pila
+    System.out.println("Tarea, de ALTA prioridad  aún no puede ser modificada esta pendiente: " + tarea.getId());
+            return "Tarea, La tarea no puede ser modificada aún  está pendiente";
+        }else  {
+            if(colaEspera.removeIf(t -> t.getId().equals(tareaId))) {
+                colaEspera.offer(tarea);
+                System.out.println("Tarea NORMAL modificada en la cola: " + tarea.getId());
+                return "Tarea modificada exitosamente.";
+            } else {
+                return "ID no encontrado en la cola de espera.";
+            }
+    }
+    }
 }
